@@ -81,6 +81,7 @@ namespace Plugin.BLE.Android
                             //we already hadled device error so no need th raise disconnect event(happens when device not in range)
                             _adapter.HandleDisconnectedDevice(true, _device);
                         }
+                        ConnectionInterrupted?.Invoke(this, EventArgs.Empty);
                         break;
                     }
 
